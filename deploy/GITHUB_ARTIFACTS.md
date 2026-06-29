@@ -9,7 +9,7 @@ Deployment tarballs from `npm run package:deploy` are often **50–100+ MB**. Th
 
    ```bash
    gh release create "deploy-YYYYMMDD-HHMMSS" \
-     "dist/htd-linux-networking-app-deploy-YYYYMMDD-HHMMSS.tar.gz" \
+     "dist/upg-platforms-portal-deploy-YYYYMMDD-HHMMSS.tar.gz" \
      --title "Deployment package" \
      --notes "Extract and follow INSTALL.txt inside the archive."
    ```
@@ -36,7 +36,7 @@ Then commit `.gitattributes` and the files you intend to track. **Clones require
 **Stop tracking** (file stays on disk; `dist/` remains gitignored):
 
 ```bash
-git rm --cached dist/htd-linux-networking-app-deploy-*.tar.gz
+git rm --cached dist/upg-platforms-portal-deploy-*.tar.gz
 git commit -m "chore: stop tracking deployment tarball"
 git push
 ```

@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UPG Platforms Portal
+
+Training and knowledge portal for the Unified Platform Group (UPG), built with [Next.js](https://nextjs.org).
 
 ## Getting Started
 

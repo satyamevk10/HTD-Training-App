@@ -1,10 +1,10 @@
-HTD Linux Networking App — container deployment
+UPG Platforms Portal — container deployment
 ================================================
 
 Prerequisites: Docker Engine 24+ and Docker Compose v2.
 
 1. Extract the included source archive (if you received a bundle tarball):
-     mkdir -p /opt/htd && cd /opt/htd
+     mkdir -p /opt/upg-platforms-portal && cd /opt/upg-platforms-portal
      tar -xzf source.tar.gz
 
 2. From the application root (directory that contains `Dockerfile` and `package.json`):
@@ -21,7 +21,7 @@ Prerequisites: Docker Engine 24+ and Docker Compose v2.
      docker compose -f deploy/docker-compose.yml --env-file .env run --rm migrate node prisma/seed.mjs
    Set SUPER_ADMIN_PASSWORD (and optional SUPER_ADMIN_EMAIL / SUPER_ADMIN_NAME) in `.env` if you use the seed script defaults.
 
-For a pre-built image only: load with `docker load -i htd-linux-networking-app-image.tar` if provided,
+For a pre-built image only: load with `docker load -i upg-platforms-portal-image.tar` if provided,
 then run with a compose file that uses `image:` instead of `build:` for the `app` service.
 
 Coolify (self-hosted PaaS on a VPS): see deploy/COOLIFY.md and use coolify-compose.yml (repo root) as the Compose file path in Coolify.

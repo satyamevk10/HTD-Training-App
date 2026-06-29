@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 STAMP="$(date +%Y%m%d-%H%M%S)"
-PKG_NAME="htd-linux-networking-app-deploy-${STAMP}"
+PKG_NAME="upg-platforms-portal-deploy-${STAMP}"
 DIST_ROOT="${ROOT}/dist"
 OUT_DIR="${DIST_ROOT}/${PKG_NAME}"
 ARCHIVE="${DIST_ROOT}/${PKG_NAME}.tar.gz"
@@ -26,11 +26,11 @@ cp "${ROOT}/deploy/env.example" "${OUT_DIR}/"
 if command -v docker >/dev/null 2>&1; then
   if docker info >/dev/null 2>&1; then
     echo "Building app image..."
-    IMAGE_TAG="htd-linux-networking-app:${STAMP}"
+    IMAGE_TAG="upg-platforms-portal:${STAMP}"
     docker build -t "${IMAGE_TAG}" "${ROOT}"
-    echo "Saving image to ${OUT_DIR}/htd-linux-networking-app-image.tar ..."
-    docker save "${IMAGE_TAG}" -o "${OUT_DIR}/htd-linux-networking-app-image.tar"
-    echo "To load on another host: docker load -i htd-linux-networking-app-image.tar"
+    echo "Saving image to ${OUT_DIR}/upg-platforms-portal-image.tar ..."
+    docker save "${IMAGE_TAG}" -o "${OUT_DIR}/upg-platforms-portal-image.tar"
+    echo "To load on another host: docker load -i upg-platforms-portal-image.tar"
   else
     echo "Docker daemon not reachable; skipping image build (source bundle only). Start Docker and re-run to include the image."
   fi
